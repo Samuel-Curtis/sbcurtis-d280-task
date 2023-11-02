@@ -1,8 +1,8 @@
 <div class="main-container">
     <div class="map-container">
-        <app-map></app-map>
+        <app-map (countryNameEmitter)="updateCountryData($event)"></app-map>
     </div>
     <div class="data-display-container">
-        <app-data-display></app-data-display>
+        <app-data-display [currentCountry]="currentCountry"></app-data-display>
     </div>
 </div>

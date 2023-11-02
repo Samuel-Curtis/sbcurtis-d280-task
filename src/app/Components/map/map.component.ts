@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-map',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./map.component.scss']
 })
 export class MapComponent implements OnInit {
+
+  @Output() countryNameEmitter: EventEmitter<string> = new EventEmitter<string>()
 
   ngOnInit(): void {
     this.addEventListeners();
@@ -27,6 +29,6 @@ export class MapComponent implements OnInit {
 
   getCountryData(name: string) {
     console.log(`name: ${name}`);
-    
+    this.countryNameEmitter.emit(name)
   }
 }

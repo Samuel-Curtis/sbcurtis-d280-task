@@ -1,0 +1,18 @@
+.main-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    .map-container {
+        border: solid black;
+        width: 70%;
+        height: 100%;
+    }
+
+    .data-display-container {
+        border: solid green;
+        width: 30%;
+        height: 100%;
+    }
+}

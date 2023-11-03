@@ -7,7 +7,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class MapComponent implements OnInit {
 
-  @Output() countryNameEmitter: EventEmitter<string> = new EventEmitter<string>()
+  @Output() countryCodeEmitter: EventEmitter<string> = new EventEmitter<string>()
 
   ngOnInit(): void {
     this.addEventListeners();
@@ -18,18 +18,16 @@ export class MapComponent implements OnInit {
 
     for(let i = 0; i < paths.length; i++) {
       paths[i].addEventListener('mouseover', () => {
-        let name: string | null = paths[i].getAttribute('name');
         let countryCode: string | null = paths[i].getAttribute('id');
 
-        if (name != null && countryCode != null) {
+        if (countryCode != null) {
           this.getCountryData(countryCode);
         }
       })
     }
   }
 
-  getCountryData(name: string) {
-    // console.log(`name: ${name}`);
-    this.countryNameEmitter.emit(name)
+  getCountryData(countryCode: string) {
+    this.countryCodeEmitter.emit(countryCode)
   }
 }

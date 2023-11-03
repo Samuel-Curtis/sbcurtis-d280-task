@@ -7,9 +7,9 @@ import { Component } from '@angular/core';
 })
 export class MainComponent {
 
-  currentCountry!: string | null;
+  currentCountryCode!: string | null;
 
-  updateCountryData(country: string): void {
-    this.currentCountry = country;
+  updateCountryCode(countryCode: string): void {
+    this.currentCountryCode = countryCode;
   }
 }

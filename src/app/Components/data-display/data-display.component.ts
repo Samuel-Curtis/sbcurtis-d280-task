@@ -11,12 +11,12 @@ import { CountryDataService } from 'src/app/Services/country-data.service';
 export class DataDisplayComponent implements OnChanges {
 
   @Input() currentCountryCode!: string | null;
-  country!: CountryData;
+  country?: CountryData | null;
 
   constructor(private service: CountryDataService) {}
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.currentCountryCode) {
+    if (this.currentCountryCode && this.currentCountryCode != this.country?.iso2Code) {
       this.getCountryData(this.currentCountryCode)
     }
   }
@@ -24,7 +24,6 @@ export class DataDisplayComponent implements OnChanges {
   getCountryData(countryCode: string) {
     this.service.getCountryData(countryCode).subscribe({
       next: (data: ApiResponse) => {
-        
         this.country = {
           name: data.name,
           capital: data.capitalCity,
@@ -36,8 +35,7 @@ export class DataDisplayComponent implements OnChanges {
         }
       },
       error: () => {
-        console.log(`Show Error`);
-        
+        this.country = null;
       }
     })
   }

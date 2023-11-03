@@ -5,8 +5,15 @@
     justify-content: center;
 
     svg {
+
+        path {
+            fill: black;
+            transition: .4s;
+        }
+
         path:hover {
             fill: red;
+            transition: .4s;
         }
     }
 }

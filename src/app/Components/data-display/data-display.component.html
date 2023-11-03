@@ -1,33 +1,38 @@
 <div class="data-display-wrapper">
-    <ul *ngIf="country">
-        <li class="data">
-            <span class="label">Country Name: </span>
-            {{ country.name }}
-        </li>
-        <li class="data">
-            <span class="label">Capital: </span>
-            {{ country.capital }}
-        </li>
-        <li class="data">
-            <span class="label">Region: </span>
-            {{ country.region }}
-        </li>
-        <li class="data">
-            <span class="label">Income Level: </span>
-            {{ country.incomeLevel }}
-        </li>
-        <li class="data">
-            <span class="label">Country Code: </span>
-            {{ country.iso2Code }}
-        </li>
-        <li class="data">
-            <span class="label">Latitude: </span>
-            {{ country.latitude }}
-        </li>
-        <li class="data">
-            <span class="label">Longitude: </span>
-            {{ country.longitude }}
-        </li>
-       
-    </ul>
+
+    <div class="list-container">
+        <h2>Country Data:</h2>
+        <p>Hover over any country to learn about it!</p>
+        <ul>
+            <li class="data">
+                <span class="label">Country Name: </span>
+                <span *ngIf="country" class="value">{{ country.name }}</span>
+            </li>
+            <li class="data">
+                <span class="label">Capital: </span>
+                <span *ngIf="country" class="value">{{ country.capital }}</span>
+            </li>
+            <li class="data">
+                <span class="label">Region: </span>
+                <span *ngIf="country" class="value">{{ country.region }}</span>
+            </li>
+            <li class="data">
+                <span class="label">Income Level: </span>
+                <span *ngIf="country" class="value">{{ country.incomeLevel }}</span>
+            </li>
+            <li class="data">
+                <span class="label">Country Code: </span>
+                <span *ngIf="country" class="value">{{ country.iso2Code }}</span>
+            </li>
+            <li class="data">
+                <span class="label">Latitude: </span>
+                <span *ngIf="country" class="value">{{ country.latitude }}</span>
+            </li>
+            <li class="data">
+                <span class="label">Longitude: </span>
+                <span *ngIf="country" class="value">{{ country.longitude }}</span>
+            </li>
+           
+        </ul>
+    </div>
 </div>

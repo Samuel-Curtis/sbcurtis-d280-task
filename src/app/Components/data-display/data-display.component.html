@@ -1,3 +1,33 @@
 <div class="data-display-wrapper">
-    <h1 *ngIf="currentCountry">{{ currentCountry }}</h1>
+    <ul *ngIf="country">
+        <li class="data">
+            <span class="label">Country Name: </span>
+            {{ country.name }}
+        </li>
+        <li class="data">
+            <span class="label">Capital: </span>
+            {{ country.capital }}
+        </li>
+        <li class="data">
+            <span class="label">Region: </span>
+            {{ country.region }}
+        </li>
+        <li class="data">
+            <span class="label">Income Level: </span>
+            {{ country.incomeLevel }}
+        </li>
+        <li class="data">
+            <span class="label">Country Code: </span>
+            {{ country.iso2Code }}
+        </li>
+        <li class="data">
+            <span class="label">Latitude: </span>
+            {{ country.latitude }}
+        </li>
+        <li class="data">
+            <span class="label">Longitude: </span>
+            {{ country.longitude }}
+        </li>
+       
+    </ul>
 </div>

@@ -19,16 +19,17 @@ export class MapComponent implements OnInit {
     for(let i = 0; i < paths.length; i++) {
       paths[i].addEventListener('mouseover', () => {
         let name: string | null = paths[i].getAttribute('name');
+        let countryCode: string | null = paths[i].getAttribute('id');
 
-        if (name != null) {
-          this.getCountryData(name);
+        if (name != null && countryCode != null) {
+          this.getCountryData(countryCode);
         }
       })
     }
   }
 
   getCountryData(name: string) {
-    console.log(`name: ${name}`);
+    // console.log(`name: ${name}`);
     this.countryNameEmitter.emit(name)
   }
 }

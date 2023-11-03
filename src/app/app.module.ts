@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MapComponent } from './Components/map/map.component';
 import { DataDisplayComponent } from './Components/data-display/data-display.component';
 import { MainComponent } from './Page/main/main.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MainComponent } from './Page/main/main.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
